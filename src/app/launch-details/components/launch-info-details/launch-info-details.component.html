@@ -1,0 +1,17 @@
+<app-card *ngIf="launch">
+  <div class="info-details-container" card-content>
+    <p class="info">
+      Lot: <span class="bold">{{ launch.name }}</span>
+    </p>
+    <p class="info">
+      Data lotu:
+      <span class="bold">{{ launch.date_utc | date: "YYYY-MM-dd" }}</span>
+    </p>
+    <p class="info">
+      Status:
+      <span class="bold">
+        {{ launch.success ? "Udany" : "Nieudany" }}
+      </span>
+    </p>
+  </div>
+</app-card>

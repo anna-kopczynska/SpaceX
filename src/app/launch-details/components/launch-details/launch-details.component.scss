@@ -1,0 +1,26 @@
+@import "breakpoints";
+
+.info-container {
+  display: grid;
+  grid-row-gap: 16px;
+}
+.gallery,
+.info {
+  margin: 16px 0;
+}
+@include media-breakpoint-up("md") {
+  .info-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 24px;
+  }
+  .gallery,
+  .info {
+    margin: 24px 0;
+  }
+}
+.spinner-container {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}

@@ -1,0 +1,32 @@
+@import "breakpoints";
+@import "variables";
+
+.gallery {
+  height: 371px;
+  background-color: $color-background-dark-gray;
+  text-align: center;
+  .ng-fa-icon {
+    font-size: 36px;
+  }
+}
+.carousel.slide {
+  height: 371px;
+}
+.wrapper {
+  height: 371px;
+}
+img {
+  height: 100%;
+}
+
+@include media-breakpoint-up("md") {
+  .carousel.slide {
+    margin: 0 auto;
+    width: min-content;
+  }
+
+  img {
+    height: 100%;
+    width: auto;
+  }
+}

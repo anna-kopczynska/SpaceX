@@ -5,7 +5,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { ResponseModel } from '../../models/response.model';
+import { ResponseModel } from '../../../shared/models/response.model';
 
 @Component({
   selector: 'app-launches-list',

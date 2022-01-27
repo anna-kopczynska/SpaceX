@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { prepareHttpQuery } from '../../constants/prepare-http-query';
-import { SearchFormModel } from '../../models/search-form.model';
-import { LaunchesStoreService } from '../../state/launches-store.service';
+import { prepareHttpQuery } from 'src/app/constants/prepare-http-query';
+import { SearchFormModel } from 'src/app/shared/models/search-form.model';
+import { LaunchesStoreService } from 'src/app/state/launches-store.service';
 
 @Component({
   selector: 'app-launches-main-page',

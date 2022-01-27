@@ -42,7 +42,7 @@ export interface LaunchModel {
     landing_attempt: boolean;
     landing_success: boolean;
     landing_type: string;
-    landpad: string;
+    launchpad: string;
   }[];
   links: {
     patch: {
@@ -67,4 +67,5 @@ export interface LaunchModel {
   };
   auto_update: boolean;
   launch_library_id: string;
+  id: string;
 }
