@@ -1,0 +1,60 @@
+@import "variables";
+
+.datepicker-container {
+  .datepicker-label {
+    margin-bottom: 0;
+    font-size: 14px;
+    color: $color-text-gray;
+  }
+  .datepicker-input {
+    font-size: 13px;
+    color: $color-text-gray;
+    height: 40px;
+  }
+}
+
+.btn-icon {
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-left: none;
+  fa-icon {
+    color: $primaryColor;
+  }
+}
+
+::ng-deep.ngb-dp-day,
+::ng-deep.ngb-dp-weekday,
+::ng-deep.ngb-dp-week-number {
+  height: 1.9rem !important;
+  width: 1.9rem !important;
+}
+
+.form-group.hidden {
+  width: 0;
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+.custom-day {
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  display: inline-block;
+  height: 1.9rem;
+  width: 1.9rem;
+}
+
+.custom-day.range,
+.custom-day:hover {
+  background-color: $primaryColor;
+  color: white;
+}
+.custom-day.faded {
+  background-color: darken($color: $primaryColor, $amount: 20%);
+}
+.form-control[readonly] {
+  background-color: #fff;
+}
+
+.form-control {
+  cursor: pointer;
+}

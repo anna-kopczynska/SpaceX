@@ -1,0 +1,13 @@
+<div class="container">
+  <section class="launches-filters">
+    <app-launches-filters
+      (searchLaunches)="onSearchLaunches($event)"
+    ></app-launches-filters>
+  </section>
+  <section class="launches-list">
+    <app-launches-list
+      [launches]="launches$ | async"
+      (pageChange)="onPageChange($event)"
+    ></app-launches-list>
+  </section>
+</div>

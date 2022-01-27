@@ -1,0 +1,39 @@
+<div class="datepicker-container">
+  <label class="datepicker-label">{{ label }}</label>
+
+  <div class="input-group">
+    <input
+      #rangeInput
+      class="form-control datepicker-input"
+      placeholder="RRRR/MM/DD - RRRR/MM/DD"
+      name="dp"
+      ngbDatepicker
+      [dayTemplate]="t"
+      [autoClose]="false"
+      [displayMonths]="2"
+      #datepicker="ngbDatepicker"
+      readonly
+      (click)="datepicker.toggle()"
+    />
+
+    <ng-template #t let-date="date" let-focused="focused">
+      <span
+        class="custom-day"
+        [class.range]="
+          isFrom(date) || isTo(date) || isInside(date) || isHovered(date)
+        "
+        [class.faded]="isHovered(date) || isInside(date)"
+        (click)="onDateSelection(date)"
+        (mouseenter)="hoveredDate = date"
+        (mouseleave)="hoveredDate = null"
+      >
+        {{ date.day }}
+      </span>
+    </ng-template>
+    <div class="input-group-append">
+      <button class="btn btn-icon" (click)="datepicker.toggle()" type="button">
+        <fa-icon [icon]="faCalendarAlt"></fa-icon>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="filers-container">
+  <form [formGroup]="searchForm.form" class="form">
+    <app-search
+      [label]="'Nazwa lotu'"
+      [placeholder]="'Wpisz nazwę'"
+      controlName="name"
+    ></app-search>
+    <app-datepicker
+      fromControlName="fromDate"
+      toControlName="toDate"
+      [label]="'Data lotu'"
+    ></app-datepicker>
+    <app-checkbox
+      controlName="success"
+      [label]="'Pokaż tylko udane loty'"
+    ></app-checkbox>
+    <button type="button" class="btn btn-primary search-btn" (click)="search()">
+      Szukaj
+    </button>
+  </form>
+</div>

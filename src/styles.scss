@@ -1,8 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
-$primaryColor: #30c2d5;
+@import "variables";
+
 $theme-colors: (
   primary: $primaryColor,
 );
 
 /* Importing Bootstrap SCSS file. */
 @import "~bootstrap/scss/bootstrap";
+
+* {
+  box-sizing: border-box;
+}
+html {
+  background-color: $color-background-gray;
+}
+body {
+  font-family: Arial, sans-serif;
+  color: $color-text-gray;
+  height: 100%;
+}

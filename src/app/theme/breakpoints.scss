@@ -1,0 +1,18 @@
+$screen-md-min: 768px;
+
+$screen-lg-min: 1200px;
+
+$breakpoints: (
+  "md": $screen-md-min,
+  "lg": $screen-lg-min,
+);
+
+@mixin media-breakpoint-up($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints , $breakpoint )) {
+      @content;
+    }
+  } @else {
+    @error 'Unfortunately "#{$breakpoint}" can not be found. ' + 'Available breakpoints are: #{map-keys($breakpoints)}.';
+  }
+}

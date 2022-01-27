@@ -1,0 +1,18 @@
+<app-card>
+  <div class="card" card-content>
+    <div
+      *ngIf="photoUrl"
+      class="photo-container"
+      [style.backgroundImage]="'url(' + photoUrl + ')'"
+    ></div>
+    <div *ngIf="!photoUrl" class="photo-container">
+      <fa-icon [icon]="faImage" ngif></fa-icon>
+    </div>
+    <div class="info-container">
+      <p class="number"># {{ launch?.flight_number }}</p>
+      <p class="name">{{ launch?.name }}</p>
+      <p class="date">{{ launch?.date_utc | date }}</p>
+      <button type="button" class="btn btn-outline-primary">więcej ></button>
+    </div>
+  </div>
+</app-card>
