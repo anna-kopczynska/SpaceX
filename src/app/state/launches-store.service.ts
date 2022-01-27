@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
-import { catchError, concatMap, EMPTY, Observable } from 'rxjs';
+import { catchError, concatMap, EMPTY, Observable, tap } from 'rxjs';
 import { HttpQueryModel } from '../shared/models/http-query.model';
 import { LaunchpadModel } from '../shared/models/launchpad.model';
 import { LaunchModel } from '../shared/models/launch.model';
@@ -66,7 +66,7 @@ export class LaunchesStoreService extends ComponentStore<LaunchesState> {
   );
 
   private readonly updateLaunch = this.updater(
-    (state: LaunchesState, launch: LaunchModel) => {
+    (state: LaunchesState, launch: LaunchModel | null) => {
       return {
         ...state,
         error: '',
@@ -142,6 +142,14 @@ export class LaunchesStoreService extends ComponentStore<LaunchesState> {
 
           catchError(() => EMPTY)
         );
+      })
+    );
+  });
+
+  readonly clearLaunch = this.effect((clear$: Observable<void>) => {
+    return clear$.pipe(
+      tap(() => {
+        this.updateLaunch(null);
       })
     );
   });

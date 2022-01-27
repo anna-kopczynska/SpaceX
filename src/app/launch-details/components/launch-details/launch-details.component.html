@@ -1,11 +1,39 @@
-<div class="container" *ngIf="launch">
-  <app-launch-header [launchNumber]="launch.flight_number"></app-launch-header>
-  <app-launch-info-details [launch]="launch"></app-launch-info-details>
-  <app-rocket-details
-    [rocket]="rocket"
-    [launch]="launch"
-    [launchpad]="launchpad"
-  ></app-rocket-details>
-  <app-launch-gallery></app-launch-gallery>
-  <app-launch-info [launch]="launch"></app-launch-info>
+<div
+  class="details-container"
+  *ngIf="launch && rocket && launchpad; else spinner"
+>
+  <div class="header">
+    <app-launch-header
+      [launchNumber]="launch.flight_number"
+    ></app-launch-header>
+  </div>
+  <div class="info-container">
+    <div class="info-details">
+      <app-launch-info-details [launch]="launch"></app-launch-info-details>
+    </div>
+    <div class="rocket-details">
+      <app-rocket-details
+        [rocket]="rocket"
+        [launch]="launch"
+        [launchpad]="launchpad"
+      ></app-rocket-details>
+    </div>
+  </div>
+
+  <div class="gallery">
+    <app-launch-gallery
+      [rocketGallery]="rocket.flickr_images"
+      [launchGallery]="launch.links.flickr.original"
+    ></app-launch-gallery>
+  </div>
+  <div class="info">
+    <app-launch-info [launch]="launch"></app-launch-info>
+  </div>
 </div>
+<ng-template #spinner>
+  <div class="spinner-container">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</ng-template>

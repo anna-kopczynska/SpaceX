@@ -27,4 +27,8 @@ export class LaunchDetailsPageComponent {
   ) {
     this.launchesStore.getLaunch(this.launchId);
   }
+
+  ngOnDestroy(): void {
+    this.launchesStore.clearLaunch();
+  }
 }

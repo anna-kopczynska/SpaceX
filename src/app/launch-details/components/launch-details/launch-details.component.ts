@@ -9,7 +9,7 @@ import { RocketModel } from '../../../shared/models/rocket.model';
   styleUrls: ['./launch-details.component.scss'],
 })
 export class LaunchDetailsComponent {
-  @Input() launch!: LaunchModel | null | undefined;
+  @Input() launch!: LaunchModel | null;
   @Input() rocket!: RocketModel | null;
   @Input() launchpad!: LaunchpadModel | null;
 }

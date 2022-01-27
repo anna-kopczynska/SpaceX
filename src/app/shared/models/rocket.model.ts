@@ -85,9 +85,8 @@ export interface RocketModel {
     number: number;
     material: object;
   };
-  flickr_images: {
-    type: string[];
-  };
+  flickr_images: string[];
+
   wikipedia: string;
   description: string;
   id: String;

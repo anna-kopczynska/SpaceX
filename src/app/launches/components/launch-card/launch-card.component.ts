@@ -17,7 +17,7 @@ export class LaunchCardComponent {
   set launch(value: LaunchModel | null) {
     if (value) {
       this._launch = value;
-      this.photoUrl = value?.links.flickr.original[0];
+      this.photoUrl = value.links.flickr.original[0];
     }
   }
 

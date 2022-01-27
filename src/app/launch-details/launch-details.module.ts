@@ -10,6 +10,7 @@ import { LaunchGalleryComponent } from './components/launch-gallery/launch-galle
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CardModule } from '../shared/card/card.module';
 import { RocketDetailsComponent } from './components/rocket-details/rocket-details.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { RocketDetailsComponent } from './components/rocket-details/rocket-detai
     LaunchDetailsRoutingModule,
     FontAwesomeModule,
     CardModule,
+    NgbModule,
   ],
 })
 export class LaunchDetailsModule {}

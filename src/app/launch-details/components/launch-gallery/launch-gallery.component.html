@@ -1,1 +1,16 @@
-<p>launch-gallery works!</p>
+<app-card>
+  <div class="gallery" card-content>
+    <div class="carousel">
+      <ngb-carousel>
+        <ng-template
+          *ngFor="let image of launchGallery.concat(rocketGallery)"
+          ngbSlide
+        >
+          <div class="wrapper">
+            <img [src]="image" />
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </div>
+</app-card>
