@@ -1,0 +1,13 @@
+@import "variables";
+
+.input-control {
+  .input-label {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+  .input-ctrl {
+    font-size: 13px;
+    color: $color-text-gray;
+    height: 40px;
+  }
+}
