@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { faReply } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -9,4 +10,10 @@ import { faReply } from '@fortawesome/free-solid-svg-icons';
 export class LaunchHeaderComponent {
   @Input() launchNumber!: number;
   faReply = faReply;
+
+  constructor(private readonly router: Router) {}
+
+  goToMainPage() {
+    this.router.navigate(['/launches']);
+  }
 }
