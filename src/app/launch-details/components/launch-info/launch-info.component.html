@@ -1,1 +1,5 @@
-<p>launch-info works!</p>
+<app-card *ngIf="launch">
+  <div class="info" card-content>
+    <p class="text">{{ launch.details }}</p>
+  </div>
+</app-card>
