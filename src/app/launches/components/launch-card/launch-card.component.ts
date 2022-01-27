@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { faImage } from '@fortawesome/free-solid-svg-icons';
 import { LaunchModel } from '../../models/launch.model';
 
@@ -20,6 +21,17 @@ export class LaunchCardComponent {
     }
   }
 
+  constructor(
+    private readonly router: Router,
+    private readonly activatedRoute: ActivatedRoute
+  ) {}
+
   photoUrl: string | undefined = '';
   private _launch: LaunchModel | null = null;
+
+  goToDetailsPage(flightNumber: number) {
+    this.router.navigate(['details', flightNumber], {
+      relativeTo: this.activatedRoute.parent,
+    });
+  }
 }

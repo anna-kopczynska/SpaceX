@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
 import { catchError, concatMap, EMPTY, Observable } from 'rxjs';
-import { HttpQueryModel } from '../models/http-query.model';
-import { ResponseModel } from '../models/response.model';
+import { HttpQueryModel } from '../launches/models/http-query.model';
+import { ResponseModel } from '../launches/models/response.model';
 import { LaunchesHttpService } from './launches-http.service';
 
 interface LaunchesState {

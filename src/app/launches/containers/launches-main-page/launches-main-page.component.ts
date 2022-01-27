@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { prepareHttpQuery } from '../../constants/prepare-http-query';
+import { prepareHttpQuery } from '../../../constants/prepare-http-query';
 import { SearchFormModel } from '../../models/search-form.model';
-import { LaunchesStoreService } from '../../state/launches-store.service';
+import { LaunchesStoreService } from '../../../state/launches-store.service';
 
 @Component({
   selector: 'app-launches-main-page',
@@ -12,9 +12,7 @@ export class LaunchesMainPageComponent {
   readonly launches$ = this.launchesStore.launches$;
   currentQuery!: SearchFormModel;
 
-  constructor(private readonly launchesStore: LaunchesStoreService) {
-    this.launchesStore.getLaunches(prepareHttpQuery(1));
-  }
+  constructor(private readonly launchesStore: LaunchesStoreService) {}
 
   onSearchLaunches(query: SearchFormModel) {
     this.currentQuery = query;

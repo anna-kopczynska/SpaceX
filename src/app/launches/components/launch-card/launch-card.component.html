@@ -1,4 +1,4 @@
-<app-card>
+<app-card *ngIf="launch">
   <div class="card" card-content>
     <div
       *ngIf="photoUrl"
@@ -9,10 +9,16 @@
       <fa-icon [icon]="faImage" ngif></fa-icon>
     </div>
     <div class="info-container">
-      <p class="number"># {{ launch?.flight_number }}</p>
-      <p class="name">{{ launch?.name }}</p>
-      <p class="date">{{ launch?.date_utc | date }}</p>
-      <button type="button" class="btn btn-outline-primary">więcej ></button>
+      <p class="number"># {{ launch.flight_number }}</p>
+      <p class="name">{{ launch.name }}</p>
+      <p class="date">{{ launch.date_utc | date }}</p>
+      <button
+        type="button"
+        class="btn btn-outline-primary"
+        (click)="goToDetailsPage(launch.flight_number)"
+      >
+        więcej >
+      </button>
     </div>
   </div>
 </app-card>

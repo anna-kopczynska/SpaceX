@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { HttpQueryModel } from '../models/http-query.model';
-import { ResponseModel } from '../models/response.model';
+import { HttpQueryModel } from '../launches/models/http-query.model';
+import { ResponseModel } from '../launches/models/response.model';
 
 @Injectable({
   providedIn: 'root',
