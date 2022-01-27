@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { faImage } from '@fortawesome/free-solid-svg-icons';
-import { LaunchModel } from '../../models/launch.model';
+import { LaunchModel } from '../../../shared/models/launch.model';
 
 @Component({
   selector: 'app-launch-card',

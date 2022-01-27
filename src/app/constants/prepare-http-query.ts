@@ -1,5 +1,5 @@
-import { HttpQueryModel } from '../launches/models/http-query.model';
-import { SearchFormModel } from '../launches/models/search-form.model';
+import { HttpQueryModel } from '../shared/models/http-query.model';
+import { SearchFormModel } from '../shared/models/search-form.model';
 
 export function prepareHttpQuery(
   page: number,

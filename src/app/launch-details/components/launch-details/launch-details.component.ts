@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { LaunchModel } from 'src/app/launches/models/launch.model';
+import { LaunchModel } from 'src/app/shared/models/launch.model';
 
 @Component({
   selector: 'app-launch-details',

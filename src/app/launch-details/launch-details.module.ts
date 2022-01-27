@@ -8,6 +8,7 @@ import { LaunchInfoDetailsComponent } from './components/launch-info-details/lau
 import { LaunchInfoComponent } from './components/launch-info/launch-info.component';
 import { LaunchGalleryComponent } from './components/launch-gallery/launch-gallery.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CardModule } from '../shared/card/card.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     LaunchInfoComponent,
     LaunchGalleryComponent,
   ],
-  imports: [CommonModule, LaunchDetailsRoutingModule, FontAwesomeModule],
+  imports: [
+    CommonModule,
+    LaunchDetailsRoutingModule,
+    FontAwesomeModule,
+    CardModule,
+  ],
 })
 export class LaunchDetailsModule {}
