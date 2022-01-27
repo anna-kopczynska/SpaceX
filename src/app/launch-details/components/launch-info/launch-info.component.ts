@@ -7,5 +7,5 @@ import { LaunchModel } from 'src/app/shared/models/launch.model';
   styleUrls: ['./launch-info.component.scss'],
 })
 export class LaunchInfoComponent {
-  @Input() launch: LaunchModel | null = null;
+  @Input() details: string = '';
 }
