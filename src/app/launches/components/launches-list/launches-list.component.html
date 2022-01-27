@@ -1,0 +1,26 @@
+<div class="list-container" *ngIf="launches; else spinner">
+  <div class="list" *ngIf="launches.docs.length; else noData">
+    <div *ngFor="let launch of launches.docs" class="card-container">
+      <app-launch-card [launch]="launch"></app-launch-card>
+    </div>
+    <ngb-pagination
+      (pageChange)="onPageChange($event)"
+      [collectionSize]="launches.totalDocs"
+      [boundaryLinks]="true"
+      [pageSize]="pageSize"
+      class="pagination"
+    ></ngb-pagination>
+  </div>
+</div>
+
+<ng-template #spinner>
+  <div class="spinner-container">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #noData>
+  <div class="no-data">Brak lotów dla podanych kryteriów</div>
+</ng-template>

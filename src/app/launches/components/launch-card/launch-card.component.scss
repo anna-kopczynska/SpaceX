@@ -1,0 +1,57 @@
+@import "breakpoints";
+@import "variables";
+
+.card {
+  width: 100%;
+  height: 371px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.photo-container {
+  background-color: rgba(244, 242, 242, 1);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .ng-fa-icon {
+    font-size: 36px;
+  }
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 40px;
+}
+
+.number,
+.date {
+  tab-size: 16px;
+  margin-bottom: 12px;
+}
+
+.name {
+  font-weight: 700;
+  tab-size: 18px;
+  margin-bottom: 12px;
+}
+
+button {
+  font-size: 13px;
+  height: 40px;
+  width: 148px;
+  border-radius: 10px;
+}
+
+@include media-breakpoint-up("md") {
+  .card {
+    height: 255px;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 1fr;
+  }
+}
