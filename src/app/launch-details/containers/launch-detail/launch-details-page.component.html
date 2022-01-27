@@ -1,3 +1,7 @@
 <div class="launch-container">
-  <app-launch-details [launch]="launch$ | async"></app-launch-details>
+  <app-launch-details
+    [launch]="launch$ | async"
+    [rocket]="rocket$ | async"
+    [launchpad]="launchpad$ | async"
+  ></app-launch-details>
 </div>

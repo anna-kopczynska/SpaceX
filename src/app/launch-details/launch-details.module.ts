@@ -9,6 +9,7 @@ import { LaunchInfoComponent } from './components/launch-info/launch-info.compon
 import { LaunchGalleryComponent } from './components/launch-gallery/launch-gallery.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CardModule } from '../shared/card/card.module';
+import { RocketDetailsComponent } from './components/rocket-details/rocket-details.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CardModule } from '../shared/card/card.module';
     LaunchInfoDetailsComponent,
     LaunchInfoComponent,
     LaunchGalleryComponent,
+    RocketDetailsComponent,
   ],
   imports: [
     CommonModule,

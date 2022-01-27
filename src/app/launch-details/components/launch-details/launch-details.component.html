@@ -1,6 +1,11 @@
 <div class="container" *ngIf="launch">
   <app-launch-header [launchNumber]="launch.flight_number"></app-launch-header>
   <app-launch-info-details [launch]="launch"></app-launch-info-details>
+  <app-rocket-details
+    [rocket]="rocket"
+    [launch]="launch"
+    [launchpad]="launchpad"
+  ></app-rocket-details>
   <app-launch-gallery></app-launch-gallery>
   <app-launch-info></app-launch-info>
 </div>

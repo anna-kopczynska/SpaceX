@@ -1,0 +1,17 @@
+<app-card *ngIf="launch && rocket && launchpad">
+  <div class="rocket-container" card-content>
+    <p class="info">
+      Załoga: <span class="bold">{{ launch.crew.length }}</span>
+    </p>
+    <p class="info">
+      Rakieta:
+      <span class="bold">{{ rocket.name }}</span>
+    </p>
+    <p class="info">
+      Start:
+      <span class="bold">
+        {{ launchpad.name }}
+      </span>
+    </p>
+  </div>
+</app-card>

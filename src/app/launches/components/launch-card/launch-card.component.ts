@@ -29,8 +29,8 @@ export class LaunchCardComponent {
   photoUrl: string | undefined = '';
   private _launch: LaunchModel | null = null;
 
-  goToDetailsPage(flightNumber: number) {
-    this.router.navigate(['details', flightNumber], {
+  goToDetailsPage(lounchId: string) {
+    this.router.navigate(['details', lounchId], {
       relativeTo: this.activatedRoute.parent,
     });
   }

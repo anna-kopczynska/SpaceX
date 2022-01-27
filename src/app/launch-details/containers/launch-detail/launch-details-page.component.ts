@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { map } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { tap } from 'rxjs';
 import { LaunchesStoreService } from 'src/app/state/launches-store.service';
 
 @Component({
@@ -9,24 +9,22 @@ import { LaunchesStoreService } from 'src/app/state/launches-store.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LaunchDetailsPageComponent {
-  launchId: number = +this.route.snapshot.params['id'];
-  readonly launch$ = this.launchesStore.launches$.pipe(
-    map((launches) => {
-      console.log(launches?.docs);
-      console.log(this.launchId);
-      return launches?.docs.find(
-        (launch) => launch.flight_number === this.launchId
-      );
+  launchId: string = this.route.snapshot.params['id'];
+  readonly launch$ = this.launchesStore.launch$.pipe(
+    tap((launch) => {
+      if (launch) {
+        this.launchesStore.getRocket(launch.rocket);
+        this.launchesStore.getLaunchpad(launch.launchpad);
+      }
     })
   );
+  readonly rocket$ = this.launchesStore.rocket$;
+  readonly launchpad$ = this.launchesStore.launchpad$;
 
   constructor(
-    private readonly router: Router,
-    private route: ActivatedRoute,
+    private readonly route: ActivatedRoute,
     private readonly launchesStore: LaunchesStoreService
-  ) {}
-
-  back() {
-    this.router.navigate(['launches']);
+  ) {
+    this.launchesStore.getLaunch(this.launchId);
   }
 }
